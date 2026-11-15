@@ -30,6 +30,10 @@ function TodoWrapper() {
 
     const unFinishedTodos = todos.filter(todo => todo.isCompleted === false)
 
+    const deleteCompletedTodos = () => {
+        setTodos(todos.filter(todo => !todo.isCompleted))
+    };
+
     return (
         <div className="wrapper">
             <h1>待辦事項</h1>
@@ -38,6 +42,9 @@ function TodoWrapper() {
                 return <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} editTodo={editTodo} toggleCompleted={toggleCompleted} toggleEditing={toggleEditing}/>
             })}
             <p>剩餘未完成：{unFinishedTodos.length}</p>
+            <div className="action">
+                <button className="btn" onClick={() => deleteCompletedTodos()}>一鍵刪除已完成</button>
+            </div>
         </div>
     );
 }

@@ -65,3 +65,19 @@ body {
     opacity: 0.4;    /* 顏色變淡 */
     text-decoration: line-through 3px black;
 }
+
+.action {
+    display: flex;
+    justify-content: end;
+}
+
+.btn {
+    background-color: #064a85;
+    color: white;
+    font-size: 10px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
